@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-grid">
+        <header>
+            <div class="navbar">
+                <h2>{{title}}</h2>
+            </div>
+        </header>
+        <main class="mt-3">
+            <div class="intro-section">
+                <img src="{{ url_for('static', filename='img/mainimg.jpeg') }}" alt="" class="backimg">
+                <div class="overleycontent">
+                    <h2>Cutting-edge tools for detecting deepfakes, phishing, ads, viruses, and secure chat.</h2>
+                    <h4>Empowering digital safety with advanced detection and secure communication tools.</h4>
+                    <div class="centerjustify">
+                        <div class="line"></div>
+                    </div>
+                    <div class="btnsec">
+                        <button class="mt-5 mainbtn"><a href="#sections">Explore</a></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="title"></div>
+        <section class="mt-5">
+            <div class="sections" id="sections">
+                <div class="content">
+                    <img src="{{ url_for('static', filename='img/toolsimg/deepfake.jpg') }}" alt="" width="380px" height="280px">
+                    <div class="incontent">
+                        <p>Advanced technology for real-time deepfake detection and user education</p>
+                        <div class="centerjustify">
+                            <button>Discover Deepfake Detection</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="{{ url_for('static', filename='img/toolsimg/phishing.png') }}" alt="" width="380px" height="280px">
+                    <div class="incontent">
+                        <p>State-of-the-art solutions for identifying and blocking phishing websites</p>
+                        <div class="centerjustify">
+                            <button><a href="{{url_for('phishing')}}">Explore Phishing Protection</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sections">
+                <div class="content">
+                    <img src="{{ url_for('static', filename='img/toolsimg/chatbot.webp') }}" alt="" width="380px" height="280px">
+                    <div class="incontent">
+                        <p>AI-driven assistance for resolving your cybersecurity concerns</p>
+                        <div class="centerjustify">
+                            <button>Ask the AI Bot</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="{{ url_for('static', filename='img/toolsimg/viruschecker.webp') }}" alt="" width="380px" height="280px">
+                    <div class="incontent">
+                        <p>Comprehensive virus detection and protection for your files</p>
+                        <div class="centerjustify">
+                            <button>Scan for Viruses</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sections">
+                <div class="content">
+                    <img src="{{ url_for('static', filename='img/toolsimg/adblock.png') }}" alt="" width="380px" height="280px">
+                    <div class="incontent">
+                        <p>Customizable adblocking for a cleaner, faster browsing experience</p>
+                        <div class="centerjustify">
+                            <button>Try Adblock</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="{{ url_for('static', filename='img/toolsimg/encryption.png') }}" alt="" width="380px" height="280px">
+                    <div class="incontent">
+                        <p>Secure end-to-end encrypted chat for private communications</p>
+                        <div class="centerjustify">
+                            <button>Start Encrypted Chatting</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

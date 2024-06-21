@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepfake Detection | {{title}}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/deepfake.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<style>
+    :root{
+    --primary-color:#000000;
+    --secondary-color:#4CAF50;
+    --hover-color:#058c0a;
+    --background:#f4f4f4;
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto
+}
+body{
+    background: var(--background) !important;
+}
+.header{
+    padding: 10px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--hover-color);
+}.header a{
+    color: #000000;
+    text-decoration:none;
+}
+.maincontent{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+.maincontent img{
+    width: 50%;
+    box-sizing: border-box;
+    border: 4px solid var(--background);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+    border-radius: 4px;
+}
+.maincontent p{
+    width: 50%;
+    font-size: larger;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: justify;
+}
+.subcontent{
+    padding: 20px;
+}
+.subcontent li{
+    font-size: larger;
+}
+section{
+    padding: 30px;
+    width: 100%;
+    background: #f0f0f0;
+}
+.uploadcontent{
+    display: flex;
+    justify-content: center;
+}
+.justifycontent{
+    display: flex;
+    justify-content: center;
+}
+.justifycontent button{
+    padding: 8px;
+    border: none;
+    outline: none !important;
+    background: none;
+    border-bottom: 2px solid var(--hover-color);
+}
+@media screen and (max-width:720px) {
+.maincontent{
+    display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+width: 200%;}
+    
+}
+</style>
+<body>
+<div class="container">
+    <header>
+        <div class="header">
+           <h2><a href=""> DeepFake Detection</a> </h2>
+        </div>
+    </header>
+    <main class="mt-5">
+        <div class="maincontent">
+            <img src="{{url_for('static',filename='img/deepfakeintro.jpg')}}" alt="" width="380px" height="280px">
+            <p>Deepfake technology leverages artificial intelligence to produce convincing but fabricated media content, often used to create deceptive videos. It raises significant concerns about the spread of misinformation and poses serious threats to individual privacy and security due to its ability to generate realistic yet entirely fake portrayals of people.</p>
+        </div>
+        <div class="subcontent mt-4">
+            <ul>
+                <li><strong>Misinformation:</strong> Alters videos to spread false narratives.
+                    </li>
+                <li><strong>Privacy:</strong> Raises concerns by creating fabricated personal videos.</li>
+            </ul>
+        </div>
+
+
+    </main>
+   <section>
+    <div class="uploadcontent">
+        <form action="">
+            <input type="file">
+
+        </form>
+        
+    </div>
+    
+   </section>
+   <div class="justifycontent mt-5">
+    <button type="submit">Upload</button>
+   </div>
+
+
+<div class="advice mt-5">
+    <h2>Strategies to Protect Yourself from Deepfakes</h2>
+    <ul>
+        <li>Verify media sources and authenticity before sharing or believing.</li>
+        <li>Avoid sharing personal or sensitive information online.</li>
+        <li>Use reputable antivirus software and keep it updated.</li>
+        <li>Be cautious of unexpected or suspicious requests for information or actions.</li>
+        <li>Stay informed about evolving deepfake detection technologies and strategies.</li>
+    </ul>
+</div>
+</div>
+
+<footer class="d-flex justify-content-center mt-5">
+ <h3>&copy {{title}}</h3>
+</footer>
+
+
+
+
+</body>
+</html>

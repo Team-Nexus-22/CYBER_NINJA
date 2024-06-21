@@ -19,6 +19,10 @@ name="CYBER NINJA"
 @app.route('/')
 def home():
     return render_template('index.html',title=name)
+#deepfake detection
+@app.route('/deepfakedetection')
+def deepfake():
+    return render_template('deepfake.html',title=name)
 
 #phishing
 @app.route("/phishing-url-detector", methods=["GET", "POST"])
@@ -37,7 +41,7 @@ def phishing_url_detector():
         # if(y_pred ==1 ):
         pred = "It is {0:.2f} % safe to go ".format(y_pro_phishing*100)
         return render_template('phishingURLDetector.html',xx =round(y_pro_non_phishing,2),url=url )
-    return render_template("phishingURLDetector.html", xx =-1)
+    return render_template("phishingURLDetector.html", xx =-1,title=name)
 
 api_key = "AIzaSyBVbV0KNNMV70FVebcWm2Vn5AoNlXAvNlA"  
 genai.configure(api_key=api_key)

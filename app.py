@@ -90,24 +90,23 @@ def g_ai():
 
 @app.route('/ask', methods=['POST'])
 def ask_question():
-    try:
-        user_question = request.form['question'].strip()
+    user_input = request.form['question']
 
-        if user_question.lower() == 'quit':
-            return "Exiting the chatbot. Goodbye!"
+    if user_input.lower() == 'quit':
+        return "Exiting the chatbot. Goodbye!"
 
-        custom_resp = custom_response(user_question)
-        if custom_resp:
-            return custom_resp
+    custom_resp = custom_response(user_input)
+    if custom_resp:
+        return custom_resp
 
-        response_chunks = get_gemini_response(user_question)
-        response_text = ' '.join(chunk.text for chunk in response_chunks)
+    response = get_gemini_response(user_input)
+    response_text = ''
+    for chunk in response:
+        response_text += chunk.text + ' '
 
-        formatted_response = format_response(response_text)
+    formatted_response = format_response(response_text)
 
-        return render_template('response.html', response=formatted_response)
-    except Exception as e:
-        return f"An error occurred: {str(e)}"
+    return formatted_response
 
 if __name__ == '__main__':
     app.run(debug=True)
